@@ -3,10 +3,6 @@
  */
 export declare function exists(thing: any): boolean;
 /**
- * Hashes any number of elements into a combined hash value.
- */
-export declare function hash(...objects: any[]): number;
-/**
  * Applies a template and its default values to a target object.
  */
 export declare function objectApplyTemplate(target: object, template: object): object;

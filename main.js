@@ -1,10 +1,9 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.setTotalHeight = exports.setTotalWidth = exports.parseDate = exports.numberSort = exports.arrayAllMatchFirstElement = exports.segmentArray = exports.removeFromArray = exports.appendToArray = exports.prependToArray = exports.arrayHasElements = exports.ordinal = exports.minimumDigits = exports.stringEqualsIgnoreCase = exports.objectApplyTemplate = exports.hash = exports.exists = void 0;
-const object_hash_1 = require("object-hash");
 // ------------------------------------------------------------ //
 // Miscellaneous
 // ------------------------------------------------------------ //
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.setTotalHeight = exports.setTotalWidth = exports.parseDate = exports.numberSort = exports.arrayAllMatchFirstElement = exports.segmentArray = exports.removeFromArray = exports.appendToArray = exports.prependToArray = exports.arrayHasElements = exports.ordinal = exports.minimumDigits = exports.stringEqualsIgnoreCase = exports.objectApplyTemplate = exports.exists = void 0;
 /**
  * Determines whether a given thing has a value.
  */
@@ -18,18 +17,6 @@ function exists(thing) {
     return true;
 }
 exports.exists = exists;
-/**
- * Hashes any number of elements into a combined hash value.
- */
-function hash(...objects) {
-    if (!arrayHasElements(objects)) {
-        return 0;
-    }
-    return objects
-        .map(object => object_hash_1.default(object))
-        .reduce((value, total) => value + total);
-}
-exports.hash = hash;
 // ------------------------------------------------------------ //
 // Objects
 // ------------------------------------------------------------ //

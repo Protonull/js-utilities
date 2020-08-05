@@ -1,5 +1,3 @@
-import internalHash from "object-hash";
-
 // ------------------------------------------------------------ //
 // Miscellaneous
 // ------------------------------------------------------------ //
@@ -15,18 +13,6 @@ export function exists(thing: any): boolean {
         return false;
     }
     return true;
-}
-
-/**
- * Hashes any number of elements into a combined hash value.
- */
-export function hash(...objects: any[]): number {
-    if (!arrayHasElements(objects)) {
-        return 0;
-    }
-    return objects
-        .map(object => internalHash(object))
-        .reduce((value, total) => value + total);
 }
 
 // ------------------------------------------------------------ //
