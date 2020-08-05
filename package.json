@@ -9,10 +9,6 @@
   "keywords": ["utilities", "javascript", "js"],
   "author": "Protonull",
   "license": "MIT",
-  "dependencies": {
-    "object-hash": "^2.0.3",
-    "slash": "^3.0.0"
-  },
   "devDependencies": {
     "typescript": "^3.9.7"
   }
