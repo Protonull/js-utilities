@@ -1,0 +1,19 @@
+{
+  "name": "js-utilities",
+  "version": "1.0.0",
+  "description": "Some utility functions I'm epically tired of rewriting.",
+  "main": "main.js",
+  "scripts": {
+    "build": "npx tsc"
+  },
+  "keywords": ["utilities", "javascript", "js"],
+  "author": "Protonull",
+  "license": "MIT",
+  "dependencies": {
+    "object-hash": "^2.0.3",
+    "slash": "^3.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.7"
+  }
+}
