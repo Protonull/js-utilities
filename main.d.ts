@@ -5,7 +5,7 @@ export declare function exists(thing: any): boolean;
 /**
  * Requires that a given thing has a value, or throws an error.
  */
-export declare function requireExistence(thing: any, message?: string): any;
+export declare function requireExistence<T>(thing: T, message?: string): T;
 /**
  * Removes a set of keyed values from an object.
  */
