@@ -22,7 +22,7 @@ export function exists(thing: any): boolean {
 /**
  * Removes a set of keyed values from an object.
  */
-function objectWithoutValues(object: object, ...keys: string[]): object {
+export function objectWithoutValues(object: object, ...keys: string[]): object {
     for (const key of keys) {
         delete object[key];
     }
@@ -48,7 +48,7 @@ export function objectApplyTemplate(target: object, template: object): object {
 /**
  * Coerces a given value into a string.
  */
-function ensureString(value: any): string {
+export function ensureString(value: any): string {
     if (typeof value === "string") {
         return value;
     }
@@ -77,7 +77,7 @@ export function stringEqualsIgnoreCase(...values: string[]): boolean {
 /**
  * Ensures that a given value is represented as a number type.
  */
-function ensureNumber(value: any): number {
+export function ensureNumber(value: any): number {
     if (isNaN(value)) {
         return 0;
     }
@@ -206,7 +206,7 @@ export function numberSort(lhs: number, rhs: number): number {
 /**
  * Sorting algorithm that will sort strings based on locale: A before Z.
  */
-function stringSort(lhs: string, rhs: string): number {
+export function stringSort(lhs: string, rhs: string): number {
     lhs = ensureString(lhs);
     rhs = ensureString(rhs);
     return lhs.localeCompare(rhs);
