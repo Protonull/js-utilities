@@ -3,7 +3,7 @@
 // Miscellaneous
 // ------------------------------------------------------------ //
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.setTotalHeight = exports.setTotalWidth = exports.parseDate = exports.numberSort = exports.arrayAllMatchFirstElement = exports.segmentArray = exports.removeFromArray = exports.appendToArray = exports.prependToArray = exports.arrayHasElements = exports.ordinal = exports.minimumDigits = exports.stringEqualsIgnoreCase = exports.objectApplyTemplate = exports.exists = void 0;
+exports.setTotalHeight = exports.setTotalWidth = exports.parseDate = exports.stringSort = exports.numberSort = exports.arrayAllMatchFirstElement = exports.segmentArray = exports.removeFromArray = exports.appendToArray = exports.prependToArray = exports.arrayHasElements = exports.ordinal = exports.minimumDigits = exports.ensureNumber = exports.stringEqualsIgnoreCase = exports.ensureString = exports.objectApplyTemplate = exports.objectWithoutValues = exports.requireExistence = exports.exists = void 0;
 /**
  * Determines whether a given thing has a value.
  */
@@ -17,6 +17,16 @@ function exists(thing) {
     return true;
 }
 exports.exists = exists;
+/**
+ * Requires that a given thing has a value, or throws an error.
+ */
+function requireExistence(thing, message) {
+    if (exists(thing)) {
+        return thing;
+    }
+    throw new Error(message !== null && message !== void 0 ? message : "Given thing must exist!");
+}
+exports.requireExistence = requireExistence;
 // ------------------------------------------------------------ //
 // Objects
 // ------------------------------------------------------------ //
@@ -29,6 +39,7 @@ function objectWithoutValues(object, ...keys) {
     }
     return object;
 }
+exports.objectWithoutValues = objectWithoutValues;
 /**
  * Applies a template and its default values to a target object.
  */
@@ -56,6 +67,7 @@ function ensureString(value) {
     }
     return "";
 }
+exports.ensureString = ensureString;
 /**
  * Determines whether a set of strings equal each other, ignoring case.
  */
@@ -80,6 +92,7 @@ function ensureNumber(value) {
     }
     return Number(value);
 }
+exports.ensureNumber = ensureNumber;
 /**
  * Ensures that a stringified number has a certain minimum width of trailing zeros.
  * @param value
@@ -206,6 +219,7 @@ function stringSort(lhs, rhs) {
     rhs = ensureString(rhs);
     return lhs.localeCompare(rhs);
 }
+exports.stringSort = stringSort;
 // ------------------------------------------------------------ //
 // Dates
 // ------------------------------------------------------------ //

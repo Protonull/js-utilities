@@ -3,13 +3,29 @@
  */
 export declare function exists(thing: any): boolean;
 /**
+ * Requires that a given thing has a value, or throws an error.
+ */
+export declare function requireExistence(thing: any, message?: string): any;
+/**
+ * Removes a set of keyed values from an object.
+ */
+export declare function objectWithoutValues(object: object, ...keys: string[]): object;
+/**
  * Applies a template and its default values to a target object.
  */
 export declare function objectApplyTemplate(target: object, template: object): object;
 /**
+ * Coerces a given value into a string.
+ */
+export declare function ensureString(value: any): string;
+/**
  * Determines whether a set of strings equal each other, ignoring case.
  */
 export declare function stringEqualsIgnoreCase(...values: string[]): boolean;
+/**
+ * Ensures that a given value is represented as a number type.
+ */
+export declare function ensureNumber(value: any): number;
 /**
  * Ensures that a stringified number has a certain minimum width of trailing zeros.
  * @param value
@@ -51,6 +67,10 @@ export declare function arrayAllMatchFirstElement(value: any, index: number, arr
  * Sorting algorithm that will sort numbers from lowest to highest.
  */
 export declare function numberSort(lhs: number, rhs: number): number;
+/**
+ * Sorting algorithm that will sort strings based on locale: A before Z.
+ */
+export declare function stringSort(lhs: string, rhs: string): number;
 /**
  * Attempts to parse a date from a given value. Date objects will be returned as is. Strings will be interpreted as date
  * strings (such as "Wed Aug 05 2020 14:19:27"). Numbers will be interpreted as timestamps.
