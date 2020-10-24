@@ -15,6 +15,16 @@ export function exists(thing: any): boolean {
     return true;
 }
 
+/**
+ * Requires that a given thing has a value, or throws an error.
+ */
+export function requireExistence(thing: any, message?: string): any {
+    if (exists(thing)) {
+        return thing;
+    }
+    throw new Error(message ?? "Given thing must exist!");
+}
+
 // ------------------------------------------------------------ //
 // Objects
 // ------------------------------------------------------------ //
