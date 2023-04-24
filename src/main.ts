@@ -74,31 +74,8 @@ export { ensureNumber, minimumDigits, ordinal } from "./numbers";
 import { arrayHasElements, prependToArray, appendToArray, removeFromArray, segmentArray, arrayAllMatchFirstElement } from "./arrays";
 export { arrayHasElements, prependToArray, appendToArray, removeFromArray, segmentArray, arrayAllMatchFirstElement } from "./arrays";
 
-/**
- * Sorting algorithm that will sort numbers from lowest to highest.
- */
-export function numberSort(lhs: number, rhs: number): number {
-    lhs = ensureNumber(lhs);
-    rhs = ensureNumber(rhs);
-    if (lhs > rhs) {
-        return 1;
-    }
-    else if (rhs > lhs) {
-        return -1;
-    }
-    else {
-        return 0;
-    }
-}
-
-/**
- * Sorting algorithm that will sort strings based on locale: A before Z.
- */
-export function stringSort(lhs: string, rhs: string): number {
-    lhs = ensureString(lhs);
-    rhs = ensureString(rhs);
-    return lhs.localeCompare(rhs);
-}
+import { numberSort, stringSort } from "./sorting";
+export { numberSort, stringSort } from "./sorting";
 
 // ------------------------------------------------------------ //
 // Dates
