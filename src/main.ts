@@ -9,27 +9,8 @@ export { exists, requireExistence } from "./lang";
 // Objects
 // ------------------------------------------------------------ //
 
-/**
- * Removes a set of keyed values from an object.
- */
-export function objectWithoutValues(object: object, ...keys: string[]): object {
-    for (const key of keys) {
-        delete object[key];
-    }
-    return object;
-}
-
-/**
- * Applies a template and its default values to a target object.
- */
-export function objectApplyTemplate(target: object, template: object): object {
-    Object.keys(template).forEach((key) => {
-        if (!target.hasOwnProperty(key)) {
-            target[key] = template[key];
-        }
-    });
-    return target;
-}
+import { objectWithoutValues, objectApplyTemplate } from "./objects";
+export { objectWithoutValues, objectApplyTemplate } from "./objects";
 
 // ------------------------------------------------------------ //
 // Strings
