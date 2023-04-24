@@ -35,30 +35,8 @@ export function objectApplyTemplate(target: object, template: object): object {
 // Strings
 // ------------------------------------------------------------ //
 
-/**
- * Coerces a given value into a string.
- */
-export function ensureString(value: any): string {
-    if (typeof value === "string") {
-        return value;
-    }
-    if (exists(value)) {
-        return "" + value;
-    }
-    return "";
-}
-
-/**
- * Determines whether a set of strings equal each other, ignoring case.
- */
-export function stringEqualsIgnoreCase(...values: string[]): boolean {
-    if (values.length < 2) {
-        return true;
-    }
-    return values
-        .map(value => ensureString(value).toUpperCase())
-        .every(arrayAllMatchFirstElement);
-}
+import { ensureString, stringEqualsIgnoreCase } from "./strings";
+export { ensureString, stringEqualsIgnoreCase } from "./strings";
 
 // ------------------------------------------------------------ //
 // Numbers
