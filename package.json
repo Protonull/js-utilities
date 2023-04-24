@@ -2,7 +2,7 @@
     "name": "js-utilities",
     "version": "1.0.3",
     "description": "Some utility functions I'm epically tired of rewriting.",
-    "main": "main.js",
+    "main": "dist/main.js",
     "scripts": {
         "build": "npx tsc"
     },
@@ -10,6 +10,7 @@
     "author": "Protonull",
     "license": "MIT",
     "devDependencies": {
+        "@tsconfig/node18": "^2.0.0",
         "typescript": "^5.0.4"
     }
 }

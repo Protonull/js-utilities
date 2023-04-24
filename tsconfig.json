@@ -1,8 +1,23 @@
 {
+    "extends": "@tsconfig/node18/tsconfig.json",
     "compilerOptions": {
-        "module": "commonjs",
-        "target": "ES6",
+        "sourceMap": true,
         "declaration": true,
-        "declarationMap": true
-    }
+        "declarationMap": true,
+
+        "allowJs": false,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": true,
+        "noImplicitAny": false,
+        "preserveConstEnums": true,
+
+        "baseUrl": "./",
+        "outDir": "./dist"
+    },
+    "include": [
+        "./src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
 }
