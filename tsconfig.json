@@ -1,8 +1,8 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "target": "ES6",
-    "declaration": true,
-    "declarationMap": true
-  }
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "ES6",
+        "declaration": true,
+        "declarationMap": true
+    }
 }
