@@ -71,67 +71,8 @@ export { ensureNumber, minimumDigits, ordinal } from "./numbers";
 // Arrays
 // ------------------------------------------------------------ //
 
-/**
- * Determines whether an array has elements.
- */
-export function arrayHasElements(array: any[]): boolean {
-    if (!Array.isArray(array)) {
-        return false;
-    }
-    return array.length > 0;
-}
-
-/**
- * Prepends a series of entries to the beginning of a given array.
- * @return {Array} Returns the given array.
- */
-export function prependToArray(array: any[], ...entries: any[]): any[] {
-    array.unshift(...entries);
-    return array;
-}
-
-/**
- * Appends a series of entries to the end of a given array.
- * @return {Array} Returns the given array.
- */
-export function appendToArray(array: any[], ...entries: any[]): any[] {
-    array.push(entries);
-    return array;
-}
-
-/**
- * Removes the first instance of an entry from an array.
- * @return {Array} Returns the given array.
- */
-export function removeFromArray(array: any[], entry: any): any[] {
-    const index = array.indexOf(entry);
-    if (index >= 0) {
-        array.splice(index, 1);
-    }
-    return array;
-}
-
-/**
- * Splits an array into batches of a maximum size.
- */
-export function segmentArray(array: any[], length: number): any[][] {
-    if (array.length <= length) {
-        return [array];
-    }
-    return new Array(Math.ceil(array.length / length))
-        .fill([])
-        .map((value, index) => array.slice(index * length, (index * length) + length));
-}
-
-/**
- * Determines whether each element strictly matches the first element. Use in array.every().
- */
-export function arrayAllMatchFirstElement(value: any, index: number, array: any[]): boolean {
-    if (index < 1 || !arrayHasElements(array)) {
-        return true;
-    }
-    return value === array[0];
-}
+import { arrayHasElements, prependToArray, appendToArray, removeFromArray, segmentArray, arrayAllMatchFirstElement } from "./arrays";
+export { arrayHasElements, prependToArray, appendToArray, removeFromArray, segmentArray, arrayAllMatchFirstElement } from "./arrays";
 
 /**
  * Sorting algorithm that will sort numbers from lowest to highest.
