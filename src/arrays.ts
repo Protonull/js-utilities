@@ -1,8 +1,14 @@
 /**
  * Determines whether an array has elements.
+ *
+ * @example
+ * arrayHasElements("Hello, World") // false
+ * arrayHasElements([]) // false
+ * arrayHasElements([1]) // true
+ * arrayHasElements([undefined]) // true
  */
 export function arrayHasElements(
-    array: any[]
+    array: any
 ): boolean {
     return Array.isArray(array) && array.length > 0;
 }
@@ -11,12 +17,18 @@ export function arrayHasElements(
  * Convenience method for functional programming which prepends a given series of elements, returning the given array.
  *
  * @return Returns the given array.
+ *
+ * @example
+ * prependToArray(
+ *     [1, 2, 3, 4],
+ *     [10, 11, 12, 13]
+ * ) // [10, 11, 12, 13, 1, 2, 3, 4]
  */
 export function prependToArray<T extends Array<unknown>>(
     array: T,
-    ...entries: unknown[]
+    ...entriesToPrepend: unknown[]
 ): T {
-    array.unshift(...entries);
+    array.unshift(...entriesToPrepend);
     return array;
 }
 
@@ -24,12 +36,18 @@ export function prependToArray<T extends Array<unknown>>(
  * Convenience method for functional programming which appends a given series of elements, returning the given array.
  *
  * @return Returns the given array.
+ *
+ * @example
+ * prependToArray(
+ *     [1, 2, 3, 4],
+ *     [10, 11, 12, 13]
+ * ) // [1, 2, 3, 4, 10, 11, 12, 13]
  */
 export function appendToArray<T extends Array<unknown>>(
     array: T,
-    ...entries: unknown[]
+    ...entriesToAppend: unknown[]
 ): T {
-    array.push(entries);
+    array.push(entriesToAppend);
     return array;
 }
 
@@ -50,6 +68,13 @@ export function removeFromArray<T extends Array<unknown>>(
 
 /**
  * Splits an array into batches of a maximum size.
+ *
+ * @example
+ *
+ * segmentArray(
+ *     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+ *     3
+ * ) // [ [1,2,3], [4,5,6], [7,8,9], [10,11,12], [13,14] ]
  */
 export function segmentArray(
     array: any[],
@@ -72,6 +97,7 @@ export function segmentArray(
  *
  * @example
  * [1,2,3,4].every(arrayAllMatchFirstElement) // false
+ * [2,1,1,1].every(arrayAllMatchFirstElement) // false
  * [1,1,1,1].every(arrayAllMatchFirstElement) // true
  */
 export function arrayAllMatchFirstElement(
