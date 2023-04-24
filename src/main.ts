@@ -2,28 +2,8 @@
 // Miscellaneous
 // ------------------------------------------------------------ //
 
-/**
- * Determines whether a given thing has a value.
- */
-export function exists(thing: any): boolean {
-    if (typeof thing === "undefined") {
-        return false;
-    }
-    if (thing === null) {
-        return false;
-    }
-    return true;
-}
-
-/**
- * Requires that a given thing has a value, or throws an error.
- */
-export function requireExistence<T>(thing: T, message?: string): T {
-    if (exists(thing)) {
-        return thing;
-    }
-    throw new Error(message ?? "Given thing must exist!");
-}
+import { exists, requireExistence } from "./lang";
+export { exists, requireExistence } from "./lang";
 
 // ------------------------------------------------------------ //
 // Objects
