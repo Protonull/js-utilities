@@ -64,51 +64,8 @@ export function stringEqualsIgnoreCase(...values: string[]): boolean {
 // Numbers
 // ------------------------------------------------------------ //
 
-/**
- * Ensures that a given value is represented as a number type.
- */
-export function ensureNumber(value: any): number {
-    if (isNaN(value)) {
-        return 0;
-    }
-    return Number(value);
-}
-
-/**
- * Ensures that a stringified number has a certain minimum width of trailing zeros.
- * @param value
- * @param {number} minimumWidth The minimum width, defaulted to 1. (Zero or below will return the value as is)
- */
-export function minimumDigits(value: number, minimumWidth: number = 1): string {
-    let stringed = "" + value;
-    if (minimumWidth <= 0 || stringed.length > minimumWidth) {
-        return stringed;
-    }
-    return "0".repeat(minimumWidth - stringed.length) + stringed;
-}
-
-/**
- * Calculates the appropriate ordinal for any positive integer.
- */
-export function ordinal(number: number): string {
-    switch (number % 100) {
-        case 11:
-        case 12:
-        case 13:
-            return "th";
-        default:
-            switch (number % 10) {
-                case 1:
-                    return "st";
-                case 2:
-                    return "nd";
-                case 3:
-                    return "rd";
-                default:
-                    return "th";
-            }
-    }
-}
+import { ensureNumber, minimumDigits, ordinal } from "./numbers";
+export { ensureNumber, minimumDigits, ordinal } from "./numbers";
 
 // ------------------------------------------------------------ //
 // Arrays
