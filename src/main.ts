@@ -88,18 +88,5 @@ export { parseDate } from "./dates";
 // HTML Elements
 // ------------------------------------------------------------ //
 
-export function setTotalWidth(element: HTMLElement, width: number): void {
-    // @ts-ignore
-    element.width = width;
-    element.style.width = width + "px";
-    element.style.minWidth = width + "px";
-    element.style.maxWidth = width + "px";
-}
-
-export function setTotalHeight(element: HTMLElement, height: number): void {
-    // @ts-ignore
-    element.height = height;
-    element.style.height = height + "px";
-    element.style.minHeight = height + "px";
-    element.style.maxHeight = height + "px";
-}
+import { setTotalWidth, setTotalHeight } from "./html";
+export { setTotalWidth, setTotalHeight } from "./html";
