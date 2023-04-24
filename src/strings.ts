@@ -11,15 +11,19 @@ export function ensureString(
 }
 
 /**
+ * Determines whether a set of strings equal each other.
+ */
+export function stringEquals(
+    ...values: string[]
+): boolean {
+    return values.length < 2 || values.every(arrayAllMatchFirstElement);
+}
+
+/**
  * Determines whether a set of strings equal each other, ignoring case.
  */
 export function stringEqualsIgnoreCase(
     ...values: string[]
 ): boolean {
-    if (values.length < 2) {
-        return true;
-    }
-    return values
-        .map((value) => value.toUpperCase())
-        .every(arrayAllMatchFirstElement);
+    return stringEquals(...values.map((value) => value.toUpperCase()));
 }
